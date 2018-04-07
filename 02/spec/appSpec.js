@@ -1,25 +1,27 @@
-describe('test', () => {
+describe('parent', () => {
   beforeEach(() => {
-    console.log('[beforeEach]')
-    console.log(`this.value = ${this.value}`)
-    this.value = 'before'
+    console.log('parent beforeEach')
   })
 
   afterEach(() => {
-    console.log('[afterEach]')
-    console.log(`this.value = ${this.value}`)
-    this.value = 'after'
+    console.log('parent afterEach')
   })
 
-  it('test1', () => {
-    console.log('[test1]')
-    console.log(`this.value = ${this.value}`)
-    this.value = 'test1'
+  it('parent test', () => {
+    console.log('parent test')
   })
 
-  it('test2', () => {
-    console.log('[test2]')
-    console.log(`this.value = ${this.value}`)
-    this.value = 'test2'
+  describe('child', () => {
+    beforeEach(() => {
+      console.log('child beforeEach')
+    })
+
+    afterEach(() => {
+      console.log('child afterEach')
+    })
+
+    it('child test', () => {
+      console.log('child test')
+    })
   })
 })
