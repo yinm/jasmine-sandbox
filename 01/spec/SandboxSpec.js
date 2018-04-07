@@ -18,4 +18,9 @@ describe('Sandbox', () => {
     expect(a).not.toEqual('1')
     expect(a).not.toBe('1')
   })
+
+  it('Taroを含む', () => {
+    const players = ['Taro', 'Jiro', 'Sub']
+    expect(players).toContain('Taro')
+  })
 })
