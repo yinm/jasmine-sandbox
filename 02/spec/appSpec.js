@@ -6,13 +6,7 @@ describe('suite', () => {
       }
     }
 
-    spyOn(obj, 'method').and.callFake((param) => {
-      console.log(`fake param = ${param}`)
-      return 'fake'
-    })
-
-    const result = obj.method('hoge')
-
-    expect(result).toBe('fake')
+    spyOn(obj, 'method').and.throwError('mock exception')
+    expect(obj.method).toThrowError('mock exception')
   })
 })
