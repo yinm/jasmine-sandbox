@@ -1,7 +1,13 @@
 describe('suite', () => {
   it('spec', () => {
-    const func = () => { throw 'test' }
+    function MyClass() {}
+    const myClass = new MyClass()
 
-    expect(func).toThrow('test')
+    expect(myClass).toEqual(jasmine.any(MyClass))
+    expect({}).toEqual(jasmine.any(Object))
+    expect([]).toEqual(jasmine.any(Array))
+    expect(11).toEqual(jasmine.any(Number))
+    expect('').toEqual(jasmine.any(String))
+    expect(true).toEqual(jasmine.any(Boolean))
   })
 })
