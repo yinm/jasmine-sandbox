@@ -6,7 +6,11 @@ describe('suite', () => {
       }
     }
 
-    spyOn(obj, 'method').and.throwError('mock exception')
-    expect(obj.method).toThrowError('mock exception')
+    spyOn(obj, 'method')
+
+    obj.method()
+    obj.method()
+
+    expect(obj.method.calls.count()).toBe(2)
   })
 })
