@@ -6,10 +6,10 @@ describe('suite', () => {
       }
     }
 
-    spyOn(obj, 'method').and.callThrough()
+    spyOn(obj, 'method').and.returnValue('stub')
 
-    obj.method()
+    const result = obj.method()
 
-    expect(obj.method).toHaveBeenCalled()
+    expect(result).toBe('stub')
   })
 })
