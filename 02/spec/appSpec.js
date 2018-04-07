@@ -8,8 +8,8 @@ describe('suite', () => {
 
     spyOn(obj, 'method')
 
-    obj.method()
+    obj.method('hoge', 'fuga')
 
-    expect(obj.method).toHaveBeenCalled()
+    expect(obj.method).toHaveBeenCalledWith('hoge', 'fuga')
   })
 })
