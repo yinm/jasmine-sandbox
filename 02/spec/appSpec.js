@@ -2,9 +2,9 @@ describe('suite', () => {
   it('spec', () => {
     const
       a = 'aaa',
-      b = undefined
+      u = undefined
 
-    expect(a).toBeDefined()
-    expect(b).not.toBeDefined()
+    expect(a).not.toBeUndefined()
+    expect(u).toBeUndefined()
   })
 })
