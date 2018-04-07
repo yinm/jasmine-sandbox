@@ -1,6 +1,7 @@
 describe('suite', () => {
   it('spec', () => {
-    expect(1).toBeLessThan(2)
-    expect(4).toBeGreaterThan(3)
+    const func = () => { throw 'test' }
+
+    expect(func).toThrow()
   })
 })
