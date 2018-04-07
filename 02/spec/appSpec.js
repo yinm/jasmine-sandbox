@@ -1,18 +1,15 @@
 describe('suite', () => {
   it('spec', () => {
-    jasmine.addMatchers({
-      myMatcher: function(util, customEqualityTesters) {
-        return {
-          compare: function(actual, expected) {
-            return {
-              pass: actual === expected,
-              message: 'hoge',
-            }
-          }
-        }
+    const obj = {
+      method: function() {
+        console.log('obj#method(')
       }
-    })
+    }
 
-    expect(1).myMatcher(101)
+    spyOn(obj, 'method')
+
+    obj.method()
+
+    expect(obj.method).toHaveBeenCalled()
   })
 })
