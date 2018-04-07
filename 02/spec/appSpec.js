@@ -8,12 +8,12 @@ describe('suite', () => {
 
     spyOn(obj, 'method')
 
-    obj.method()
+    obj.method('first')
     obj.method(11)
-    obj.method('hoge', 'fuga')
+    obj.method('last')
 
-    expect(obj.method.calls.argsFor(0)).toEqual([])
-    expect(obj.method.calls.argsFor(1)).toEqual([11])
-    expect(obj.method.calls.argsFor(2)).toEqual(['hoge', 'fuga'])
+    // エラーになる。いい感じにmatcherがわからなかった
+    expect(obj.method.calls.first()).toEqual({object: obj, args: ['first']})
+    expect(obj.method.calls.mostRecent()).toEqual({object: obj, args: ['last']})
   })
 })
