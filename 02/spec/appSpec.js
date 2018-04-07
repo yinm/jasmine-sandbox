@@ -1,5 +1,10 @@
 describe('suite', () => {
   it('spec', () => {
-    expect('Hello Jasmine!!').toMatch(/^[a-zA-Z! ]+$/)
+    const
+      a = 'aaa',
+      b = undefined
+
+    expect(a).toBeDefined()
+    expect(b).not.toBeDefined()
   })
 })
