@@ -6,10 +6,10 @@ describe('suite', () => {
       }
     }
 
-    spyOn(obj, 'method')
+    spyOn(obj, 'method').and.callThrough()
 
-    obj.method('any string')
+    obj.method()
 
-    expect(obj.method).toHaveBeenCalledWith(jasmine.any(String))
+    expect(obj.method).toHaveBeenCalled()
   })
 })
