@@ -44,6 +44,15 @@ describe('Sandbox', () => {
     expect(foo).toThrowError(TypeError, 'hoge fuga')
   })
 
+  it('Pending spec', () => {
+    expect(true).toBe(false)
+    pending('this is why it is pending')
+  })
+
+  xit('Pending spec2', () => {
+    expect(true).toBe(false)
+  })
+
   describe('Check this context', () => {
     beforeEach(() => {
       this.foo = 'beforeEachで初期化'
