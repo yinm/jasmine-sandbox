@@ -1,10 +1,17 @@
 describe('suite', () => {
   it('spec', () => {
-    const obj = {
-      hoge: 'HOGE',
-      fuga: 'FUGA',
-    }
+    jasmine.addMatchers({
+      myMatcher: function(util, customEqualityTesters) {
+        return {
+          compare: function(actual, expected) {
+            return {
+              pass: actual === expected
+            }
+          }
+        }
+      }
+    })
 
-    expect(obj).toEqual(jasmine.objectContaining({fuga: 'FUGA'}))
+    expect(10).myMatcher(10)
   })
 })
