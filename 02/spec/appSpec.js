@@ -6,10 +6,13 @@ describe('suite', () => {
       }
     }
 
-    spyOn(obj, 'method').and.returnValue('stub')
+    spyOn(obj, 'method').and.callFake((param) => {
+      console.log(`fake param = ${param}`)
+      return 'fake'
+    })
 
-    const result = obj.method()
+    const result = obj.method('hoge')
 
-    expect(result).toBe('stub')
+    expect(result).toBe('fake')
   })
 })
