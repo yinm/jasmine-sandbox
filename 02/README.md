@@ -1,0 +1,1 @@
+ref: [Jasmine使い方メモ - Qiita](https://qiita.com/opengl-8080/items/cf3acafda9756f4b04c9)
