@@ -43,4 +43,20 @@ describe('Sandbox', () => {
     expect(foo).toThrowError(TypeError)
     expect(foo).toThrowError(TypeError, 'hoge fuga')
   })
+
+  describe('Check this context', () => {
+    beforeEach(() => {
+      this.foo = 'beforeEachで初期化'
+    })
+
+    it('thisは引き継がれる', () => {
+      expect(this.foo).toEqual('beforeEachで初期化')
+      this.bar = 'barは引き継がれる？'
+    })
+
+    it('次のspecに行くときは新しいthisがつくられる', () => {
+      expect(this.foo).toEqual('beforeEachで初期化')
+      expect(this.bar).toBe(undefined)
+    })
+  })
 })
