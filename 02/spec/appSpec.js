@@ -8,8 +8,8 @@ describe('suite', () => {
 
     spyOn(obj, 'method')
 
-    obj.method('hoge', 'fuga')
+    obj.method('any string')
 
-    expect(obj.method).toHaveBeenCalledWith('hoge', 'fuga')
+    expect(obj.method).toHaveBeenCalledWith(jasmine.any(String))
   })
 })
