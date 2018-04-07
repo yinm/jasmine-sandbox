@@ -32,4 +32,15 @@ describe('Sandbox', () => {
     expect(a).toBeGreaterThan(b)
     expect(b).toBeLessThan(a)
   })
+
+  it('TypeErrorが投げられる', () => {
+    const foo = function() {
+      throw new TypeError('hoge fuga')
+    }
+
+    expect(foo).toThrowError('hoge fuga')
+    expect(foo).toThrowError(/hoge/)
+    expect(foo).toThrowError(TypeError)
+    expect(foo).toThrowError(TypeError, 'hoge fuga')
+  })
 })
