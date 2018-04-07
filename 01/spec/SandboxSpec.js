@@ -68,4 +68,19 @@ describe('Sandbox', () => {
       expect(this.bar).toBe(undefined)
     })
   })
+
+  describe('time spec', () => {
+    beforeEach(() => {
+      jasmine.clock().install()
+    })
+
+    it('handle time', () => {
+      let a = 0
+      setTimeout(() => {
+        a = 100
+      }, 1000)
+      jasmine.clock().tick(1001)
+      expect(a).toBe(100)
+    })
+  })
 })
