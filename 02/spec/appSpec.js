@@ -1,12 +1,11 @@
 describe('suite', () => {
   it('spec', () => {
-    const spyObj = jasmine.createSpyObj('spyName', ['hoge', 'fuga', 'piyo'])
+    const spy = jasmine.createSpy()
 
-    spyObj.hoge()
-    spyObj.piyo()
+    setTimeout(() => {
+      spy()
+    }, 1000)
 
-    expect(spyObj.hoge).toHaveBeenCalled()
-    expect(spyObj.fuga).not.toHaveBeenCalled()
-    expect(spyObj.piyo).toHaveBeenCalled()
+    expect(spy).toHaveBeenCalled()
   })
 })
