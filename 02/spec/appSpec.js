@@ -1,19 +1,18 @@
 describe('suite', () => {
   it('spec', () => {
     jasmine.addMatchers({
-      is: function(util, customEqualityTesters) {
+      myMatcher: function(util, customEqualityTesters) {
         return {
           compare: function(actual, expected) {
-            console.log(actual)
-            console.log(expected)
             return {
-              pass: actual === expected
+              pass: actual === expected,
+              message: 'hoge',
             }
           }
         }
       }
     })
 
-    expect(10).is(10)
+    expect(1).myMatcher(101)
   })
 })
