@@ -1,17 +1,19 @@
 describe('suite', () => {
-  it('spec', () => {
-    jasmine.clock().install()
-
-    const spy = jasmine.createSpy()
-
+  beforeEach(() => {
     setTimeout(() => {
-      spy()
-    }, 100)
+      console.log('beforeEach')
+    }, 1000)
+  })
 
-    jasmine.clock().tick(101)
+  it('spec', () => {
+    setTimeout(() => {
+      console.log('spec')
+    }, 500)
+  })
 
-    expect(spy).toHaveBeenCalled()
-
-    jasmine.clock().uninstall()
+  afterEach(() => {
+    setTimeout(() => {
+      console.log('afterEach')
+    }, 200)
   })
 })
