@@ -23,4 +23,13 @@ describe('Sandbox', () => {
     const players = ['Taro', 'Jiro', 'Sub']
     expect(players).toContain('Taro')
   })
+
+  it('aはbより大きい', () => {
+    const
+      a = 100,
+      b = 1
+
+    expect(a).toBeGreaterThan(b)
+    expect(b).toBeLessThan(a)
+  })
 })
