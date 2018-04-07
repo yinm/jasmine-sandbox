@@ -1,22 +1,19 @@
 describe('suite', () => {
-  beforeEach((done) => {
-    setTimeout(() => {
-      console.log('beforeEach')
-      done()
-    }, 1000)
+  let originalTimeout
+
+  beforeEach(() => {
+    originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000
   })
 
   it('spec', (done) => {
     setTimeout(() => {
       console.log('spec')
       done()
-    }, 500)
+    }, 6000)
   })
 
-  afterEach((done) => {
-    setTimeout(() => {
-      console.log('afterEach')
-      done()
-    }, 200)
+  afterEach(() => {
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout
   })
 })
