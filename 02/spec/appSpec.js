@@ -1,27 +1,28 @@
-describe('parent', () => {
-  beforeEach(() => {
-    console.log('parent beforeEach')
+describe('suite1', () => {
+  it('spec1', () => {
+    console.log('suite1 spec1')
   })
 
-  afterEach(() => {
-    console.log('parent afterEach')
+  xit('spec2', () => {
+    console.log('suite1 spec2')
+  })
+})
+
+xdescribe('suite2', () => {
+  it('spec1', () => {
+    console.log('suite2 spec1')
   })
 
-  it('parent test', () => {
-    console.log('parent test')
+  xit('spec2', () => {
+    console.log('suite2 spec2')
+  })
+})
+
+describe('suite3', () => {
+  it('spec1', () => {
+    console.log('suite3 spec1')
+    pending()
   })
 
-  describe('child', () => {
-    beforeEach(() => {
-      console.log('child beforeEach')
-    })
-
-    afterEach(() => {
-      console.log('child afterEach')
-    })
-
-    it('child test', () => {
-      console.log('child test')
-    })
-  })
+  it('spec2')
 })
